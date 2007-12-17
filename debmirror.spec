@@ -12,7 +12,6 @@ Source:		ftp.debian.org/debian/pool/main/d/debmirror/%{name}_%{version}.1.tar.bz
 Url:		http://packages.debian.org/unstable/net/debmirror
 BuildRequires:  perl
 Buildarch:  noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 This program downloads and maintains a partial local Debian mirror. It can
