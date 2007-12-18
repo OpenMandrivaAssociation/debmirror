@@ -1,6 +1,6 @@
 %define name	debmirror
 %define version 20060907
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name:		%{name}
 Version:	%{version}
