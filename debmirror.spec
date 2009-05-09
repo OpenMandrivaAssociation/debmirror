@@ -1,6 +1,6 @@
 %define name	debmirror
-%define version 20060907
-%define release %mkrel 5
+%define version 20070123
+%define release %mkrel 1
 
 Name:		%{name}
 Version:	%{version}
@@ -8,7 +8,7 @@ Release:	%{release}
 Summary:	Debian partial mirror script, with ftp and package pool support
 License:	GPL or Artistic
 Group:		Development/Other
-Source:		ftp.debian.org/debian/pool/main/d/debmirror/%{name}_%{version}.1.tar.bz2
+Source:		ftp.debian.org/debian/pool/main/d/debmirror/%{name}_%{version}.tar.gz
 Url:		http://packages.debian.org/unstable/net/debmirror
 BuildRequires:  perl
 Buildarch:  noarch
@@ -21,7 +21,7 @@ transferred by ftp, http, hftp or rsync, and package pools are fully supported.
 It also does locking and updates trace files.
 
 %prep
-%setup -q -n %{name}-20060908
+%setup -q
 
 %build
 pod2man debmirror debmirror.1
@@ -40,7 +40,7 @@ rm -rf %{buildroot}
 
 %files 
 %defattr(-,root,root)
-%doc doc/* Makefile.* NEWS.Debian
+%doc doc/* debian/NEWS.Debian debian/copyright debian/changelog
 %{_bindir}/*
 %{_mandir}/man1/*
 %config(noreplace) %{_sysconfdir}/%{name}.conf
