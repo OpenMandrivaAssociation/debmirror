@@ -1,10 +1,11 @@
 %define name	debmirror
-%define version 20070123
+%define version 2.1.1
 %define release %mkrel 1
 
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
+Epoch:      1
 Summary:	Debian partial mirror script, with ftp and package pool support
 License:	GPL or Artistic
 Group:		Development/Other
@@ -21,7 +22,7 @@ transferred by ftp, http, hftp or rsync, and package pools are fully supported.
 It also does locking and updates trace files.
 
 %prep
-%setup -q
+%setup -q -n svn
 
 %build
 pod2man debmirror debmirror.1
@@ -29,10 +30,9 @@ pod2man debmirror debmirror.1
 %install
 rm -rf %{buildroot}
 install -d -m 755 %{buildroot}%{_bindir}
-install -d -m 755 %{buildroot}%{_sysconfdir}
 install -d -m 755 %{buildroot}%{_mandir}/man1
 install -m 755 debmirror %{buildroot}%{_bindir}
-install -m 644 debmirror.conf %{buildroot}%{_sysconfdir}
+install -m 755 mirror-size %{buildroot}%{_bindir}
 install -m 644 debmirror.1 %{buildroot}%{_mandir}/man1
 
 %clean 
@@ -40,8 +40,7 @@ rm -rf %{buildroot}
 
 %files 
 %defattr(-,root,root)
-%doc doc/* debian/NEWS.Debian debian/copyright debian/changelog
+%doc doc/* debian/NEWS debian/copyright debian/changelog examples
 %{_bindir}/*
 %{_mandir}/man1/*
-%config(noreplace) %{_sysconfdir}/%{name}.conf
 
