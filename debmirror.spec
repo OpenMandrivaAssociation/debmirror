@@ -1,5 +1,5 @@
 %define name	debmirror
-%define version 2.3.1
+%define version 2.4
 %define release %mkrel 1
 
 Name:		%{name}
