@@ -9,7 +9,7 @@ Epoch:      1
 Summary:	Debian partial mirror script, with ftp and package pool support
 License:	GPL or Artistic
 Group:		Development/Other
-Url:		http://packages.debian.org/unstable/net/debmirror
+Url:		https://packages.debian.org/unstable/net/debmirror
 Source:		http://ftp.debian.org/debian/pool/main/d/debmirror/%{name}_%{version}.tar.gz
 Buildarch:  noarch
 
